@@ -1,0 +1,81 @@
+﻿version=2
+@Music.Play(RouteMusic2)
+@camera.set(9,0.5,9,0,0-0.1)
+@camera.update
+
+@npc.move(0,4)
+@npc.turn(0,2)
+
+@text.show(<system.token(NewGame_Birch_Intro1)>)
+@screen.fadeout(20)
+@camera.set(25,2,42,6.45,-0.59)
+@camera.update
+@level.update
+@screen.fadein(20)
+@text.show(<system.token(NewGame_Birch_Intro2)>)
+
+@screen.fadeout(20)
+@camera.set(9,0.5,9,0,0-0.1)
+@camera.update
+@level.update
+@screen.fadein(20)
+
+@text.show(<system.token(NewGame_Birch_Intro3)>*<system.token(NewGame_Birch_Intro4)>)
+
+@screen.skinselection
+
+@npc.wearskin(1,<screen.SelectedSkin>)
+@player.wearskin(<screen.SelectedSkin>)
+@player.setgender(<screen.SelectedGender>)
+
+:while:<camera.z><11.5
+    @camera.setz(~+0.05)
+    @camera.sety(~+0.02)
+    @camera.setpitch(~-0.006)
+    @camera.update
+:endwhile
+
+@text.show(<system.token(NewGame_Birch_YourName)>)
+@screen.input(<screen.selectedname>,name,,14)
+@player.setname(<system.lastinput>)
+
+@text.show(<system.token(NewGame_Birch_Intro5)>)
+
+@screen.fadeout(10)
+@npc.remove(0)
+@camera.set(9,0.5,9,0,0-0.1)
+@npc.position(1,9,0,5)
+@npc.turn(1,2)
+@screen.fadein(10)
+
+@text.show(<system.token(NewGame_Birch_Intro6)>)
+
+@storage.set(integer,screenFade,0)
+
+:while:<storage.get(integer,screenFade)><255
+    @camera.setz(~-0.01)
+    @camera.sety(~-0.001)
+    @camera.setpitch(~-0.0012)
+    @camera.update
+    @storage.set(integer,screenFade,<storage.get(integer,screenFade)>+1)
+    @screen.setfade(<storage.get(integer,screenFade)>)
+:endwhile
+
+@player.setot(<system.random(0,65255)>)
+@player.addmoney(3000)
+
+:if:<player.gender>=Female
+	@player.setrivalname(Brendan)
+	@player.setrivalskin(Brendan)
+:else
+	:if:<player.gender>=Male
+		@player.setrivalname(May)
+		@player.setrivalskin(May)
+	:else
+		@player.setrivalname(May)
+		@player.setrivalskin(May)
+	:endif
+:endif
+
+@system.endnewgame(Hoenn\Cities\Littleroot\InsideTruck.dat,3,0.1,3,1)
+:end

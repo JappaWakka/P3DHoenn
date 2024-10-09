@@ -1,0 +1,9 @@
+version=2
+
+:if:<register.value(storyline_progress)>=6
+	@text.show(<system.token(Littleroot_Main_LittleBoy_DontGoOutside)>)
+	:end
+:else
+	@text.show(<system.token(Littleroot_Main_LittleBoy_EndOfDemo)>)
+:endif
+:end

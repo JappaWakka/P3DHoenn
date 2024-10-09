@@ -1,0 +1,8 @@
+1|Stone|HM=Cut|Texture=GUI\Badges,0,0,50,50|Region=Hoenn
+2|Knuckle|Level=30|HM=Flash|Texture=GUI\Badges,50,0,50,50|Region=Hoenn
+3|Dynamo|HM=RockSmash|Texture=GUI\Badges,100,0,50,50|Region=Hoenn
+4|Heat|Level=50|HM=Strength|Texture=GUI\Badges,150,0,50,50|Region=Hoenn
+5|Balance|HM=Surf|Texture=GUI\Badges,200,0,50,50|Region=Hoenn
+6|Feather|Level=70|HM=Fly|Texture=GUI\Badges,250,0,50,50|Region=Hoenn
+7|Mind|HM=Dive|Texture=GUI\Badges,300,0,50,50|Region=Hoenn
+8|Rain|Level=100|HM=Waterfall|Texture=GUI\Badges,350,0,50,50|Region=Hoenn

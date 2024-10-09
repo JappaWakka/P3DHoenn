@@ -1,0 +1,25 @@
+Name|Hoenn
+Description|
+Version|0.1
+Author|JappaWakka
+MapPath|$Mode\Content\Data\Maps\
+ScriptPath|$Mode\Content\Data\Scripts\
+PokeFilePath|$Mode\Content\Data\Maps\WildEncounters\
+PokemonDataPath|$Mode\Content\Pokemon\Data\
+ContentPath|$Mode\Content\
+LocalizationsPath|$Mode\Content\Localization\
+Gamerules|(MaxLevel|100)(OnlyCaptureFirst|0)(ForceRename|0)(DeathInsteadOfFaint|0)(CanUseHealItems|1)(Difficulty|0)(LockDifficulty|0)(GameOverAt0Pokemon|0)(CanGetAchievements|1)(ShowFollowPokemon|1)(OverworldPoison|0)(SavingDisabled|0)(SingleUseTM|0)(CanForgetHM|0)
+StartMap|NewGameIntro.dat
+StartPosition|1,0.1,3
+StartRotation|1.570796
+StartScript|DevScripts\StartScript
+StartLocationName|Inside Truck
+StartDialogue|
+StartColor|59,123,165
+PokemonAppear|0
+IntroMusic|RouteMusic2
+IntroType|1
+SkinColors|41;93;148,216;96;112,248;176;32,126;223;230
+SkinFiles|Brendan,May,Ethan,Lyra
+SkinNames|Brendan,May,Ethan,Lyra
+SkinGenders|Male,Female,Male,Female

@@ -1,0 +1,54 @@
+version=2
+
+:if:<register.value(storyline_progress)>=0
+	#after exiting the moving truck
+	:if:<player.thirdperson>=true
+		@camera.setyaw(0)
+	:endif
+	@player.stopmovement
+	@sound.play(jump_from_truck)
+	@player.setmovement(1,0,0)
+	@player.move(1)
+	@player.turnto(3)
+	@level.wait(50)
+	@npc.spawn(8,0,8,0,,Mom,0,2,Mom,4,Still)
+	@sound.play(Enter)
+	@level.wait(30)
+	@npc.move(4,2)
+	@npc.turn(4,1)
+	@text.show(<system.token(Littleroot_Main_Mom_OutsideMovingTruck)>)
+	@npc.turn(4,0)
+	@npc.moveasync(4,1)
+	@player.move(1)
+	@player.turnto(0)
+	@npc.moveasync(4,1)
+	@player.move(1)
+	@npc.remove(4)
+	@register.change(storyline_progress,1)
+	@player.warp(Hoenn\Cities\Littleroot\YourHouse1f.dat,8,0.1,7,0)
+	@level.update
+	:end
+:endif
+:if:<register.value(storyline_progress)>=5
+	#first time going outside
+	:if:<npc.exists(3)>=false
+		@npc.spawn(11,0,2,1,Hoenn\Cities\Littleroot\Main_LittleBoy,LittleBoy2,0,2,Little Boy,3,Still)
+	:else
+		@npc.warp(3,11,0,2)
+	:endif
+	@register.change(storyline_progress,6)
+:endif
+:if:<register.value(storyline_progress)>>5 <and> <register.value(storyline_progress)><10
+	:if:<npc.exists(3)>=false
+		@npc.spawn(11,0,2,1,Hoenn\Cities\Littleroot\Main_LittleBoy,LittleBoy2,0,2,Little Boy,3,Still)
+	:else
+		@npc.warp(3,11,0,2)
+	:endif
+:endif
+
+:if:<register.value(storyline_progress)>>5
+	#remove the moving truck entity
+	@entity.remove(0)
+:endif
+:end
+	
