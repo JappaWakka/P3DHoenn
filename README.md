@@ -1,2 +1,2 @@
 # P3DHoenn
-Hoenn GameMode for Pokémon 3D v0.61+
+Hoenn GameMode for Pokémon 3D v0.60.1+
